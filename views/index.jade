@@ -1,8 +1,10 @@
 extends layout
-
 block content
+  audio(controls='', autoplay='')
+    source(src='/audio/audio.mpeg', type='audio/mpeg')
+  hr
   a(href='http://yourworldoftext.com/openwhormhole')
     img(src="/images/fax.jpg" alt="Fax")
   a(href='http://yourworldoftext.com/unplugmachine')
     img(src="/images/endoll.jpeg" width="50" alt="Endoll")
-
+  
