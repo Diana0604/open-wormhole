@@ -1,10 +1,13 @@
 extends layout
 block content
-  audio(controls='', autoplay='')
+  audio#audio(controls='', autoplay='')
     source(src='/audio/audio.mpeg', type='audio/mpeg')
   hr
-  a(href='http://yourworldoftext.com/openwhormhole')
+  a#fax(href='http://yourworldoftext.com/openwhormhole', hidden='')
     img(src="/images/fax.jpg" alt="Fax")
-  a(href='http://yourworldoftext.com/unplugmachine')
+  a#plug(href='http://yourworldoftext.com/unplugmachine', hidden='')
     img(src="/images/endoll.jpeg" width="50" alt="Endoll")
-  
+
+  script(src="/javascripts/index.js")
+
+
