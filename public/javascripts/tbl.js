@@ -5,12 +5,9 @@ $( "button" ).click(function() {
     alert( "Handler for .click() called." );
 });
 
-/*
+$("#clickcontainer").hide();
+
 myAudio.addEventListener("ended", function(){
     myAudio.currentTime = 0;
-    //$(".clickcontainer").show();
-    //$("#call").hide();
+    $("#clickcontainer").show();
 });
-
-
-*/
