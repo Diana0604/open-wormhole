@@ -1,18 +1,9 @@
 /* 1000 tbls */
-/*
+
 body{
 	background-image: url("/images/tbl.png");
 	background-size: 100px auto;
 	background-blend-mode: difference;
-}
-*/
-
-body{
-	background-image: url("/images/tbl.png");
-	background-repeat: no-repeat;
-	background-size: 50% auto;
-	background-blend-mode: difference;
-	background-position-x: center;
 }
 
 #clickcontainer {
@@ -23,6 +14,7 @@ body{
 }
 
 .container {
+	margin-top: 15%;
 	/*background-color: blue;*/
 	background: rgba(0,0,255,0.7);
 	color: white;
@@ -33,27 +25,3 @@ body{
 audio {
 	display: none;
 }
-
-
-	/*background-blend-mode: difference;*/
-	/*background-blend-mode: hard-light;*/
-
-
-/* --- NOT FULL FACE --- body */ 
-/*
-body{
-	background-image: url("/images/tbl.png");
-	background-repeat: no-repeat;
-	background-size: 50% auto;
-	background-position-x: center;
-}
-*/
-
-/* --- FULL FACE NOT FULL COVER --- body */
-/*body{
-	background-image: url("/images/tbl.png");
-	height: 90%;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: auto 100%;
-}*/
