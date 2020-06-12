@@ -15,18 +15,31 @@ myAudio.addEventListener("ended", function(){
     $("#faxcontainer").show();
 });
 
+dirX = [1, 1, -1, -1];
+dirY = [1, -1, 1, -1];
+
+dirI = 3;
+
+var looping = true;
+
 function moveCall() {
     var elem = document.getElementById("call");
-    var pos = 0;
+    var posX = 0;
+    var posY = 0;
     var id = setInterval(frame, 5);
     function frame() {
-      if (pos == 600) {
-        clearInterval(id);
-      } else {
-        pos++;
-        elem.style.top = pos + 'px';
-        elem.style.left = pos + 'px';
+        //console.log(looping);
+      if ((posX%600 <= 0.3 && posX%600 >= -0.3) || (posY%600 <= 0.3 && posY%600 >= -0.3) && !looping) {
+        //console.log('arrived');
+        dirI++;
+        if(dirI === 4) dirI = 0;
+        looping = true;
       }
+      if(!(posX%600 <= 0.3 && posX%600 >= -0.3) || (posY%600 <= 0.3 && posY%600 >= -0.3)) looping = false;
+        posX = posX + dirX[dirI];
+        posY = posY + dirY[dirI];
+        elem.style.top = posY + 'px';
+        elem.style.left = posX + 'px';
     }
 }
 
