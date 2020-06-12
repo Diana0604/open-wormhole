@@ -25,3 +25,15 @@ body{
 audio {
 	display: none;
 }
+
+#main-container {
+	width: 95%;
+	height: 92%;
+	position: absolute;
+	margin: 0;
+	padding: 0;
+  }
+  #call {
+	position: absolute;
+	/*background-color: red;*/
+  }

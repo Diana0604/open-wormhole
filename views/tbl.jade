@@ -4,9 +4,13 @@ block content
 	audio#audio(controls='', visibility='hidden')
 		source(src='/audio/audio.mpeg', type='audio/mpeg')
 	
-	#clickcontainer()
-		a#click(href="http://") CLICK ME
-	.container#call
-		button INCOMING CALL
+	#main-container
+		img#call(src="/images/telephone.jpg", alt="")
+	
+		.flier#faxcontainer
+			img#fax(src="/images/fax.jpg", alt="")
+
+		.container
+			p text
 
 	script(src="/javascripts/tbl.js")
