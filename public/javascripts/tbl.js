@@ -2,7 +2,7 @@ let myAudio = $("#audio")[0];
 
 $( "button" ).click(function() {
     myAudio.play();
-    alert( "Handler for .click() called." );
+    alert( "PLEASE LISTEN CAREFULLY" );
 });
 
 $("#clickcontainer").hide();
