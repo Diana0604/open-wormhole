@@ -1,22 +1,12 @@
 extends layout
 block content
 	link(rel='stylesheet', href='/stylesheets/tbl.css')
-	#clickcontainer
+	audio#audio(controls='', visibility='hidden')
+		source(src='/audio/audio.mpeg', type='audio/mpeg')
+	
+	#clickcontainer()
 		a#click(href="http://") CLICK ME
-	.container
-		p hey how are you?
-		p so I'm tbl 
-		p and well I just wanna tell you my life so shut up and read
-		p sorry
-		p I didn't wanna be mean
-		p so basically I'm a human 
-		p and I made the internet and stuff
-		p so I'm cool 
-		p and now I'm working on wormholes and parallel universes 
-		p my friends say i take too much acid 
-		p but I don't know 
-		p I think 
-		p like 
-		p it is possible, right? 
-		p I mean
-		p I'm here. You're there. We are talking....
+	.container#call
+		button INCOMING CALL
+
+	script(src="/javascripts/tbl.js")

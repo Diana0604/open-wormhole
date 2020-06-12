@@ -6,3 +6,4 @@ myAudio.addEventListener("ended", function(){
     $("#fax").show();
     $("#plug").show();
 });
+

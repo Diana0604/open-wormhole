@@ -30,6 +30,9 @@ body{
 	padding: 1%;
 }
 
+audio {
+	display: none;
+}
 
 
 	/*background-blend-mode: difference;*/
