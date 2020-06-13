@@ -1,11 +1,4 @@
-jQuery.expr.filters.offscreen = function(el) {
-    var rect = el.getBoundingClientRect();
-    return (
-                (rect.x + rect.width) < 0 
-                || (rect.y + rect.height) < 0
-                || (rect.x > window.innerWidth || rect.y > window.innerHeight)
-            );
-};
+var startMoving = null;
 
 let myAudio = $("#audio")[0];
 let incomingCall = $("#incomingCall")[0];
@@ -13,7 +6,7 @@ let called = false;
 let maxX = window.innerWidth;
 let maxY = window.innerHeight;
 
-$("#fax").hide();
+$(".fax").hide();
 $("#call").hide();
 
 $( "#call" ).click(function() {
@@ -21,6 +14,7 @@ $( "#call" ).click(function() {
     myAudio.play();
     incomingCall.pause();
     $("#call").hide();
+    startMoving = setInterval(moveElement, 2000);
 });
 
 function phoneCalling() {
@@ -44,7 +38,8 @@ $("#next").click(function() {
 myAudio.addEventListener("ended", function(){
     myAudio.currentTime = 0;
     $("#fax").show();
-    moveFax();
+    var elem = document.getElementById("fax");
+    moveElement();
 });
 
 initialX = [1, 1, -1, -1];
@@ -52,47 +47,67 @@ initialY = [1, -1, 1, -1];
 
 
 
+var movingElements = [];
+var posX = [];
+var posY = [];
+var dirX = [];
+var dirY = [];
 
+var faxes = document.getElementsByClassName("fax");
+var counter = 0;
 
-
-function moveFax() {
-    var elem = document.getElementById("fax");
+function moveElement() {
+    if(counter >= faxes.length) clearInterval(startMoving);
+    var element = faxes[counter];
+    element.style.display = "block";
+    if(movingElements.indexOf(element) != -1) return;
+    movingElements.push(element);
+    var i = movingElements.indexOf(element);
     //get initial random variables
-    var posX = Math.floor(Math.random()*maxX);
-    var posY = Math.floor(Math.random()*maxY);
+    posX[i] = Math.floor(Math.random()*maxX);
+    posY[i] = Math.floor(Math.random()*maxY);
     var dirI = Math.floor(Math.random() * 4);
-    var dirX = initialX[dirI];
-    var dirY = initialY[dirI];
-    //initiate movement
-    setInterval(frame, 5);
-    function frame() {
-        //make sure object stays inside screen
+    dirX[i] = initialX[dirI];
+    dirY[i] = initialY[dirI];
+    movingElements[i].style.top = posY[i] + 'px';
+    movingElements[i].style.left = posX[i] + 'px';
+    counter++;
+}
+
+setInterval(frame, 5);
+function frame() {
+    for(var i = 0; i < movingElements.length; i++) {
+        var elem = movingElements[i];
         function checkDir() {
-            if(posX + elem.width < 0) dirX = 1;
-            if(posX > maxX) dirX = -1;
-            if(posY + elem.height < 0) dirY = 1;
-            if(posY > maxY) dirY = -1;
+            if(posX[i] + elem.width < 0) dirX[i] = 1;
+            if(posX[i] > maxX) dirX[i] = -1;
+            if(posY[i] + elem.height < 0) dirY[i] = 1;
+            if(posY[i] > maxY) dirY[i] = -1;
         }
         checkDir();
 
         //move element
-        posX = posX + dirX;
-        posY = posY + dirY;
-        elem.style.top = posY + 'px';
-        elem.style.left = posX + 'px';
-    }
-    //generate random dir every 2 seconds
-    setInterval(newDir, 2000)
-    function newDir(){
-        dirI = Math.floor(Math.random() * 4);
-        dirX = initialX[dirI];
-        dirY = initialY[dirI];
+        posX[i] = posX[i] + dirX[i];
+        posY[i] = posY[i] + dirY[i];
+        elem.style.top = posY[i] + 'px';
+        elem.style.left = posX[i] + 'px';
     }
 }
+//generate random dir every 2 seconds
+setInterval(newDir, 5000)
+function newDir(){
+    var i = Math.floor(Math.random()*movingElements.length);
+    var newI = Math.floor(Math.random() * 4);
+    dirX[i] = initialX[newI];
+    dirY[i] = initialY[newI];
+}
 
-//$("#fax").show();
-//moveFax();
 
+/*
+for (var i = 0; i < faxes.length; i++) {
+    moveElement(faxes[i]);
+}
+*/
 var shakingElements = [];
 var shake = function (element, magnitude = 7, angular = false) {
     //First set the initial tilt angle to the right (+1) 

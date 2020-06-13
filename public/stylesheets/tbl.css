@@ -33,7 +33,7 @@ audio {
 	margin: 0;
 	padding: 0;
   }
-  #fax, #call {
+  .fax, #call {
 	position: absolute;
 	/*background-color: red;*/
   }
