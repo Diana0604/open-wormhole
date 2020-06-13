@@ -1,14 +1,15 @@
 let myAudio = $("#audio")[0];
 let incomingCall = $("#incomingCall")[0];
+let called = false;
 
 $("#fax").hide();
 $("#call").hide();
 
 $( "#call" ).click(function() {
-    //console.log('image clicked');
     alert( "PLEASE LISTEN CAREFULLY" );
     myAudio.play();
     incomingCall.pause();
+    $("#call").hide();
 });
 
 function phoneCalling() {
@@ -20,8 +21,11 @@ function phoneCalling() {
 }
 
 $("#next").click(function() {
-    incomingCall.play();
-    phoneCalling();
+    if(!called) {
+        called = true;
+        incomingCall.play();
+        phoneCalling();
+    }
 });
 
 
