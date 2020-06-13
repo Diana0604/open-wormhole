@@ -6,8 +6,9 @@ $("#call").hide();
 
 $( "#call" ).click(function() {
     //console.log('image clicked');
-    myAudio.play();
     alert( "PLEASE LISTEN CAREFULLY" );
+    myAudio.play();
+    incomingCall.pause();
 });
 
 function phoneCalling() {
@@ -58,15 +59,12 @@ function moveCall() {
 //moveCall();
 
 var shakingElements = [];
-var shake = function (element, magnitude = 16, angular = false) {
+var shake = function (element, magnitude = 7, angular = false) {
     //First set the initial tilt angle to the right (+1) 
     var tiltAngle = 1;
   
     //A counter to count the number of shakes
     var counter = 1;
-  
-    //The total number of shakes (there will be 1 shake per frame)
-    var numberOfShakes = 15;
   
     //Capture the element's position and angle so you can
     //restore them after the shaking has finished
@@ -76,7 +74,6 @@ var shake = function (element, magnitude = 16, angular = false) {
   
     // Divide the magnitude into 10 units so that you can 
     // reduce the amount of shake by 10 percent each frame
-    var magnitudeUnit = magnitude / numberOfShakes;
   
     //The `randomInt` helper function
     var randomInt = (min, max) => {
@@ -93,11 +90,7 @@ var shake = function (element, magnitude = 16, angular = false) {
       //The `updateShake` method will be called each frame
       //in the game loop. The shake effect type can be either
       //up and down (x/y shaking) or angular (rotational shaking).
-      if(angular) {
-        angularShake();
-      } else {
         upAndDownShake();
-      }
     }
   
     //The `upAndDownShake` function
@@ -105,13 +98,9 @@ var shake = function (element, magnitude = 16, angular = false) {
   
       //Shake the element while the `counter` is less than 
       //the `numberOfShakes`
-      if (counter < numberOfShakes) {
   
         //Reset the element's position at the start of each shake
         element.style.transform = 'translate(' + startX + 'px, ' + startY + 'px)';
-  
-        //Reduce the magnitude
-        magnitude -= magnitudeUnit;
   
         //Randomly change the element's position
         var randomX = randomInt(-magnitude, magnitude);
@@ -120,17 +109,11 @@ var shake = function (element, magnitude = 16, angular = false) {
         element.style.transform = 'translate(' + randomX + 'px, ' + randomY + 'px)';
   
         //Add 1 to the counter
-        counter += 1;
   
         requestAnimationFrame(upAndDownShake);
-      }
   
       //When the shaking is finished, restore the element to its original 
       //position and remove it from the `shakingElements` array
-      if (counter >= numberOfShakes) {
-        element.style.transform = 'translate(' + startX + ', ' + startY + ')';
-        shakingElements.splice(shakingElements.indexOf(element), 1);
-      }
     }
   
     //The `angularShake` function
