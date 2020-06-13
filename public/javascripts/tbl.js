@@ -12,7 +12,10 @@ $( "#call" ).click(function() {
 });
 
 function phoneCalling() {
-    $("#call").show();
+    var call = $("#call");
+    var destination = $('#next').offset();
+    call.css({top: destination.top - 100, left: destination.left -10});
+    call.show();
     shake(document.getElementById("call"));
 }
 
