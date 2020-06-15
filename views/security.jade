@@ -1,7 +1,9 @@
 extends layout
 block content
 	link(rel='stylesheet', href='/stylesheets/tbl.css')
+	
 	audio#audio(controls='', visibility='hidden')
+		source(src='/audio/audio.mp4', type='audio/mpeg')
 
 	.container
 		p I am grateful for your help. I know you are with me. I know I can trust you. But I cannot trust others. Only you can know about this mission. Only you can help me. 
@@ -12,7 +14,7 @@ block content
 
 		p Please enter the connectivity code. 
 
-		form#form(action="/tbl", method="get")
+		form#form(action="/connectivity", method="get")
 			div
 				input#password(type='password', name='agreement')
 			div

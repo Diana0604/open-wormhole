@@ -14,4 +14,8 @@ router.get('/security', function(req, res, next) {
   res.render('security', {title: 'Security'});
 });
 
+router.get('/connectivity', function(req, res, next){
+  res.render('connectivity', {title: 'Connectivity'})
+});
+
 module.exports = router;
