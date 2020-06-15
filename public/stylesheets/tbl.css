@@ -14,7 +14,7 @@ body{
 }
 
 .container {
-	margin-top: 15%;
+	margin-top: 10%;
 	/*background-color: blue;*/
 	background: rgba(0,0,255,0.7);
 	color: white;
@@ -32,8 +32,8 @@ audio {
 	position: absolute;
 	margin: 0;
 	padding: 0;
-  }
-  .fax, #call {
-	position: absolute;
-	/*background-color: red;*/
-  }
+}
+.fax, #call {
+position: absolute;
+/*background-color: red;*/
+}
