@@ -6,6 +6,11 @@ let called = false;
 let maxX = window.innerWidth;
 let maxY = window.innerHeight;
 
+myAudio.addEventListener("ended", function(){
+  myAudio.currentTime = 0;
+  $(".fax").hide();
+});
+
 $(".fax").hide();
 $("#call").hide();
 

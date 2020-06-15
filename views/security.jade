@@ -1,0 +1,21 @@
+extends layout
+block content
+	link(rel='stylesheet', href='/stylesheets/tbl.css')
+	audio#audio(controls='', visibility='hidden')
+
+	.container
+		p I am grateful for your help. I know you are with me. I know I can trust you. But I cannot trust others. Only you can know about this mission. Only you can help me. 
+
+		p We need to enter the same connectivity code just below here. Just like you do everytime you go on the internets. Or like when you use blueteeth. It builds a strong and stable connection between us.
+
+		p Stay with me, we can build a new world, together. Read between the lines. The missing links will give you access to my world. 
+
+		p Please enter the connectivity code. 
+
+		form#form(action="/tbl", method="get")
+			div
+				input#password(type='password', name='agreement')
+			div
+				input#submit(type="submit", value="Submit")
+
+	script(src="/javascripts/security.js")

@@ -10,4 +10,8 @@ router.get('/tbl', function(req, res, next){
   res.render('tbl', {title: 'TBL'});
 });
 
+router.get('/security', function(req, res, next) { 
+  res.render('security', {title: 'Security'});
+});
+
 module.exports = router;

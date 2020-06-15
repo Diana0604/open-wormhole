@@ -1,7 +1,7 @@
 let myAudio = $("#audio")[0];
 
 $("#fax").hide();
-    $("#plug").hide();
+$("#plug").hide();
 
 myAudio.addEventListener("ended", function(){
     myAudio.currentTime = 0;
@@ -9,4 +9,3 @@ myAudio.addEventListener("ended", function(){
     $("#fax").show();
     $("#plug").show();
 });
-
