@@ -7,7 +7,8 @@ var password = document.getElementById("password");
 var form = document.getElementById("form");
 
 function validatePassword(){
-  if(password.value != "betherightchoice") {
+  if(password.value != "Betherightchoice") {
+		alert('WRONG: TRY AGAIN');
 		event.preventDefault();
 		return;
 	}

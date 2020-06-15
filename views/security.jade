@@ -1,18 +1,48 @@
 extends layout
 block content
-	link(rel='stylesheet', href='/stylesheets/tbl.css')
-	
+	link(rel='stylesheet', href='/stylesheets/security.css')
+
 	audio#audio(controls='', visibility='hidden')
 		source(src='/audio/audio.mp4', type='audio/mpeg')
 
 	.container
-		p I am grateful for your help. I know you are with me. I know I can trust you. But I cannot trust others. Only you can know about this mission. Only you can help me. 
+		p I am grateful for your help. I know you are with me. I know I can trust you. 
+			span.hidden B
+			| ut I cannot trust oth
+			span.hidden e
+			| rs. Only you can know abou
+			span.hidden t
+			|  t
+			span.hidden h
+			| is mission. Only you can h
+			span.hidden e
+			| lp me. 
 
-		p We need to enter the same connectivity code just below here. Just like you do everytime you go on the internets. Or like when you use blueteeth. It builds a strong and stable connection between us.
+		p We need to ente
+			span.hidden r
+			|  the same connect
+			span.hidden i
+			| vity code just below here. Just like you do everytime you 
+			span.hidden g
+			| o on the internets. Or like w
+			span.hidden h
+			| en you use blue
+			span.hidden t
+			| eeth. It builds a strong and stable 
+			span.hidden c
+			| onnection between us.
 
-		p Stay with me, we can build a new world, together. Read between the lines. The missing links will give you access to my world. 
+		p Stay wit
+			span.hidden h
+			|  me, we can build a new w
+			span.hidden o
+			| rld, together. Read between the l
+			span.hidden i
+			| nes. The missing links will give you access to my world. 
 
-		p Please enter the connectivity code. 
+		p Please enter the connectivity cod
+			span.hidden e
+			| . 
 
 		form#form(action="/connectivity", method="get")
 			div
