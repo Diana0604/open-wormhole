@@ -1,12 +1,3 @@
-.hidden {
-    color: white;
-    font-size: 200%;
-}
-
 audio {
 	display: none;
-}
-
-.hidden::selection {
-    background: #ffb7b7; /* WebKit/Blink Browsers */
 }

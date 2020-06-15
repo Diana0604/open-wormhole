@@ -8,3 +8,13 @@ body {
 a {
   color: #00B7FF;
 }
+
+.hidden {
+  color: white;
+}
+
+
+.hidden::selection {
+  background-color: #B2D6FD;
+  color: white; 
+}
