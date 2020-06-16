@@ -23,12 +23,13 @@ var password = document.getElementById("password");
 var form = document.getElementById("form");
 
 function validatePassword(){
-  if(password.value != "Betherightchoice") {
+  if(password.value != "Betherightchoice" && password.value != 'betherightchoice') {
 		alert('WRONG: TRY AGAIN');
 		event.preventDefault();
 		return;
   }
   myAudio.play();
+  backgroundAudio.pause()
   if(counter < 4) event.preventDefault();
 	if(counter === 0) {
     event.preventDefault();
@@ -46,7 +47,7 @@ function validatePassword(){
     event.preventDefault();
     $("#submit").css({ "left": "40%"})
   }
-	counter++;
+  counter++;
 }
 
 myAudio.addEventListener("ended", function(){
