@@ -9,7 +9,7 @@ let maxY = window.innerHeight;
 myAudio.addEventListener("ended", function(){
   myAudio.currentTime = 0;
   $(".fax").hide();
-  window.location.href = "http://www.w3schools.com";
+  window.location.href = "https://drive.google.com/file/d/1KE73Fhe2BpJdF10SM9G2jRg0obKvLpmB/view?usp=sharing";
 });
 
 $(".fax").hide();
