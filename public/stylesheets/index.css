@@ -1,14 +1,20 @@
 /* 1000 tbls */
 
 body{
-    background-size: cover;
-    background-image: url("/images/fax.jpeg");
     text-align: center;
+    background-color: #c9c6c1;
 }
 
 #open-wormhole {
     position: absolute;
-    left: 32%;
-    bottom: 42%;
+    left: 30%;
+    bottom: 50%;
+    height: auto;
+}
+
+#unplug-machine {
+    position: absolute;
+    left: 60%;
+    bottom: 55%;
     height: auto;
 }

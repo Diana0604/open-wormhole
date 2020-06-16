@@ -6,8 +6,9 @@ myAudio.addEventListener("ended", function(){
     myAudio.currentTime = 0;
     console.log('ended');
     $(".hidden").show();
-    setInterval(increaseWidth, 50);
 });
+
+//setInterval(increaseWidth, 50);
 
 var posLeft = 470;
 var posBot = 270;
