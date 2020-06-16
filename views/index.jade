@@ -1,11 +1,16 @@
 extends layout
 block content
+  link(rel='stylesheet', href='/stylesheets/index.css')
+
   audio#audio(controls='', autoplay='')
     source(src='/audio/audio.mpeg', type='audio/mpeg')
+  
   hr
-  a#fax(href='http://yourworldoftext.com/openwhormhole')
-    img(src="/images/fax.jpg" alt="Fax")
-  a#plug(href='http://yourworldoftext.com/unplugmachine')
+  
+  a.hidden(href='http://yourworldoftext.com/openwhormhole')
+    img.hidden#open-wormhole(src="/images/green-button.png" alt="button" width="8%" height="11%")
+  
+  a.hidden(href='http://yourworldoftext.com/unplugmachine')
     img(src="/images/endoll.jpeg" width="50" alt="Endoll")
 
   script(src="/javascripts/index.js")

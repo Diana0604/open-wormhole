@@ -9,12 +9,13 @@ a {
   color: #00B7FF;
 }
 
-.hidden {
+span.hidden {
   color: white;
 }
 
 
-.hidden::selection {
+span.hidden::selection {
   background-color: #B2D6FD;
   color: white; 
 }
+

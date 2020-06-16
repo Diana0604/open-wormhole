@@ -1,0 +1,14 @@
+/* 1000 tbls */
+
+body{
+    background-size: cover;
+    background-image: url("/images/fax.jpeg");
+    text-align: center;
+}
+
+#open-wormhole {
+    position: absolute;
+    left: 32%;
+    bottom: 42%;
+    height: auto;
+}
