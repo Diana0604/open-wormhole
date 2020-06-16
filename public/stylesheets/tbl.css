@@ -38,3 +38,7 @@ audio {
 position: absolute;
 /*background-color: red;*/
 }
+
+.next {
+	text-decoration: underline;
+}

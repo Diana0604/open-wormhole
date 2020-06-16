@@ -2,13 +2,14 @@ var startMoving = null;
 
 let myAudio = $("#audio")[0];
 let incomingCall = $("#incomingCall")[0];
-let called = false;
+var called = false;
 let maxX = window.innerWidth;
 let maxY = window.innerHeight;
 
 myAudio.addEventListener("ended", function(){
   myAudio.currentTime = 0;
   $(".fax").hide();
+  window.location.href = "http://www.w3schools.com";
 });
 
 $(".fax").hide();
@@ -24,13 +25,13 @@ $( "#call" ).click(function() {
 
 function phoneCalling() {
     var call = $("#call");
-    var destination = $('#next').offset();
+    var destination = $('.next').offset();
     call.css({top: destination.top - 100, left: destination.left -10});
     call.show();
     shake(document.getElementById("call"));
 }
 
-$("#next").click(function() {
+$(".next").click(function() {
     if(!called) {
         called = true;
         incomingCall.play();
@@ -40,12 +41,7 @@ $("#next").click(function() {
 
 
 
-myAudio.addEventListener("ended", function(){
-    myAudio.currentTime = 0;
-    $("#fax").show();
-    var elem = document.getElementById("fax");
-    moveElement();
-});
+
 
 initialX = [1, 1, -1, -1];
 initialY = [1, -1, 1, -1];
