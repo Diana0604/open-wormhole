@@ -39,6 +39,7 @@ position: absolute;
 /*background-color: red;*/
 }
 
-.next {
+.hyperlink {
+	color: white;
 	text-decoration: underline;
 }
