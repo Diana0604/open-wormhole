@@ -31,7 +31,7 @@ function validatePassword(){
 
 form.addEventListener("submit", function(event){
     validatePassword(
-    );
+);
   });
 
 

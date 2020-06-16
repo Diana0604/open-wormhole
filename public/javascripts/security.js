@@ -1,5 +1,5 @@
 
-counter = 0;
+var counter = 0;
 
 let myAudio = $("#audio")[0];
 let backgroundAudio = $("#backgroundaudio")[0];
@@ -27,11 +27,25 @@ function validatePassword(){
 		alert('WRONG: TRY AGAIN');
 		event.preventDefault();
 		return;
-	}
-	myAudio.play();
+  }
+  myAudio.play();
+  if(counter < 4) event.preventDefault();
 	if(counter === 0) {
-		event.preventDefault();
-	}
+    event.preventDefault();
+    $("#submit").css({"position" : "relative", "left": "50%"})
+  }
+  if(counter === 1){
+    event.preventDefault();
+    $("#submit").css({ "left": "10%"})
+  }
+  if(counter === 2){
+    event.preventDefault();
+    $("#submit").css({ "left": "80%"})
+  }
+  if(counter === 3){
+    event.preventDefault();
+    $("#submit").css({ "left": "40%"})
+  }
 	counter++;
 }
 
@@ -40,11 +54,18 @@ myAudio.addEventListener("ended", function(){
 	window.location.replace("/connectivity");
 });
 
+$(document).ready(function() {
+  $(window).keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+
 form.addEventListener("submit", function(event){
     validatePassword();
   });
-
-//form.onsubmit = validatePassword;
 
 
 
