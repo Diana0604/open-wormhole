@@ -23,7 +23,7 @@ let isPlaying = false;
 });
 
 function validatePassword(){
-  if(password.value != "2" && password.value != "two") {
+  if(password.value != "2" && password.value != "two" && password.value != "Two") {
 		event.preventDefault();
 		return;
 	}

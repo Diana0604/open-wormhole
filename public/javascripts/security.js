@@ -9,7 +9,6 @@ let isPlaying = false;
 ["click", "touchmove"].forEach((eventName)=>{
   window.addEventListener(eventName, ()=>{
     if(!isPlaying){
-      
       try{
         backgroundAudio.play()
         isPlaying = true;
