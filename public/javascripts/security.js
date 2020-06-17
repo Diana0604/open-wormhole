@@ -22,9 +22,14 @@ let isPlaying = false;
 var password = document.getElementById("password");
 var form = document.getElementById("form");
 
+var tries = 0;
+
 function validatePassword(){
+  tries++;
   if(password.value != "Betherightchoice" && password.value != 'betherightchoice') {
-		alert('WRONG: TRY AGAIN');
+    if(tries === 1) alert('WRONG: TRY AGAIN');
+    if(tries === 2) alert('HINT: NO SPACES');
+    if(tries === 3) alert('HINT: betherightchoice');
 		event.preventDefault();
 		return;
   }
