@@ -8,10 +8,12 @@ block content
   
   hr
   
-  a.hidden#open-wormhole(href='https://cssd-ac.zoom.us/j/2564293123?pwd=RVdyYUxiMjdJNEtWUDRtckFmN3VmUT09', target="_blank")
-    img.hidden(src="/images/green-button.png" alt="button" width="200px")
+  img.hidden(src="/images/green-button.png" alt="button" width="200px")
+    audio.hidden(controls='', autoplay='')
+      source(src='/audio/finale.mp3', type='audio/mp3')
   
-  a.hidden#unplug-machine(href='https://cssd-ac.zoom.us/j/2564293123?pwd=RVdyYUxiMjdJNEtWUDRtckFmN3VmUT09', target="_blank")
-    img(src="/images/red-button.png" width="200px" alt="stop")
+  img(src="/images/red-button.png" width="200px" alt="stop")
+    audio.hidden(controls='', autoplay='')
+      source(src='/audio/finale.mp3', type='audio/mp3')
 
   script(src="/javascripts/index.js")
