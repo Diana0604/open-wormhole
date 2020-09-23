@@ -8,11 +8,13 @@ block content
   
   hr
   
-  img.hidden(src="/images/green-button.png" alt="button" width="200px")
+  div.hidden
+    img.hidden(src="/images/green-button.png" alt="button" width="200px")
     audio.hidden(controls='', autoplay='')
       source(src='/audio/finale.mp3', type='audio/mp3')
   
-  img(src="/images/red-button.png" width="200px" alt="stop")
+  div.hidden
+    img(src="/images/red-button.png" width="200px" alt="stop")
     audio.hidden(controls='', autoplay='')
       source(src='/audio/finale.mp3', type='audio/mp3')
 
